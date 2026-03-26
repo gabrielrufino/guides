@@ -1,5 +1,5 @@
 {
-  "name": "@gabrielrufino/docs",
+  "name": "@gabrielrufino/guides",
   "private": true,
   "scripts": {
     "docs:dev": "vitepress dev ./src",
@@ -7,6 +7,6 @@
     "docs:preview": "vitepress preview ./src"
   },
   "devDependencies": {
-    "vitepress": "^1.6.3"
+    "vitepress": "^1.6.4"
   }
 }
