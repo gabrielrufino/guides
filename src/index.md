@@ -3,23 +3,20 @@
 layout: home
 
 hero:
-  name: "Docs by Gabriel Rufino"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: Guides
+  text: by Gabriel Rufino
+  tagline: Technical guides on architecture and development
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Get Started
+      link: /architecture
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Architecture
+    details: System design principles, distributed locks, idempotency, and orchestration templates.
+  - title: Databases (MongoDB & SQL)
+    details: Deep dives into data replication, partitioning, and database management strategies.
+  - title: App Development
+    details: Best practices for JavaScript, TypeScript, observability, and writing resilient applications.
 ---
 
