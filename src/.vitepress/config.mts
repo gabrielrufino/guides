@@ -5,6 +5,24 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 export default withMermaid(defineConfig({
   title: "Guides by Gabriel Rufino",
   description: "Technical guides on software architecture, databases, and application development.",
+  head: [
+    [
+      'script',
+      {},
+      `
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.gabrielrufino.com/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+      `
+    ]
+  ],
 
   locales: {
     root: {
@@ -15,9 +33,10 @@ export default withMermaid(defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/.assets/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guides', link: '/architecture' }
+      { text: 'Guides', link: '/architecture' },
     ],
 
     sidebar: [
@@ -68,11 +87,16 @@ export default withMermaid(defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/gabrielrufino/guides' }
+      { icon: 'github', link: 'https://github.com/gabrielrufino/guides' },
+      { icon: 'linkedin', link: 'https://linkedin.com/in/gabrielrufinojs' }
     ],
 
     search: {
       provider: 'local'
+    },
+
+    footer: {
+      message: 'Written with ❤️ by <a href="https://gabrielrufino.com" target="_blank">Gabriel Rufino</a>.',
     }
   }
 }))

@@ -4,19 +4,42 @@ layout: home
 
 hero:
   name: Guides
-  text: by Gabriel Rufino
-  tagline: Technical guides on architecture and development
+  text: Engineering Knowledge base
+  tagline: Technical deep-dives on architecture, database strategies, and building resilient systems.
+  image: 
+    src: /.assets/logo.png
+    alt: Logo
   actions:
     - theme: brand
       text: Get Started
       link: /architecture
+    - theme: alt
+      text: Contribute
+      link: https://github.com/gabrielrufino/guides
 
 features:
-  - title: Architecture
+  - icon: 🏗️
+    title: Architecture
     details: System design principles, distributed locks, idempotency, and orchestration templates.
-  - title: Databases (MongoDB & SQL)
-    details: Deep dives into data replication, partitioning, and database management strategies.
-  - title: App Development
-    details: Best practices for JavaScript, TypeScript, observability, and writing resilient applications.
+    link: /architecture
+  - icon: 🍃
+    title: MongoDB
+    details: Deep dives into data replication, duplication strategies, and NoSQL best practices.
+    link: /mongodb
+  - icon: 🗄️
+    title: SQL
+    details: Horizontal vs. Vertical partitioning, database management strategies, and relational patterns.
+    link: /sql
+  - icon: 📊
+    title: Observability
+    details: Logs in JSON, application monitoring, and writing resilient, observable applications.
+    link: /observability
+  - icon: 🟨
+    title: JavaScript
+    details: Best practices for JavaScript, including mutation tests and modern patterns.
+    link: /javascript
+  - icon: 🟦
+    title: TypeScript
+    details: Advanced TypeScript techniques like Mixins and resilient type systems.
+    link: /typescript
 ---
-
