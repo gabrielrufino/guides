@@ -7,7 +7,7 @@ hero:
   text: Engineering Knowledge base
   tagline: Technical deep-dives on architecture, database strategies, and building resilient systems.
   image: 
-    src: /.assets/logo.png
+    src: /logo.png
     alt: Logo
   actions:
     - theme: brand
