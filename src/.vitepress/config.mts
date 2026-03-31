@@ -46,6 +46,7 @@ export default withMermaid(defineConfig({
         items: [
           { text: 'Distributed Locks', link: '/architecture/distributed-locks' },
           { text: 'Idempotency Keys', link: '/architecture/idempotency-keys' },
+          { text: 'Multi-tenancy', link: '/architecture/multi-tenancy' },
           { text: 'Orchestration vs. Choreography', link: '/architecture/orchestration-vs-choreography' }
         ]
       },
