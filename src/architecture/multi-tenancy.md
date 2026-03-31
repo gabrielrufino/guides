@@ -81,8 +81,10 @@ sequenceDiagram
 | :---- | :---- | :---- |
 | **Cost** | **Lower** (shared resources) | **Higher** (dedicated resources) |
 | **Maintenance** | **Easy** (update once for all) | **Hard** (update each instance) |
-| **Security** | Requires strict logic | Physical isolation |
+| **Security** | Varies (High in Model A, Logic-dependent in Model C) | Physical isolation |
 | **Customization** | Limited (shared codebase) | High (bespoke versions) |
+
+> Within the multi-tenancy umbrella, **Model A (Separate Databases)** offers security benefits similar to single-tenancy due to physical isolation, whereas **Model C (Shared Schema)** relies entirely on application logic for data safety.
 
 ## Implementation Best Practices
 
@@ -90,3 +92,5 @@ sequenceDiagram
 2. **Database Migrations:** Ensure your migration tool can run updates across all tenant schemas/databases simultaneously.  
 3. **Noisy Neighbor Protection:** Implement rate limiting per tenant so one high-usage customer doesn't slow down the system for others.  
 4. **Row-Level Security (RLS):** If using PostgreSQL, leverage RLS to enforce isolation at the database level rather than just the application code.
+5. **Tenant-Aware Indexing:** In shared environments (Model C), always include the `tenant_id` in your database indexes to keep queries fast and efficient.
+6. **Automated Isolation Testing:** Implement specific test suites that attempt cross-tenant access to ensure your isolation logic is working as expected and prevent data leaks.
