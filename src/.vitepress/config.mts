@@ -6,6 +6,7 @@ export default withMermaid(defineConfig({
   title: "Guides by Gabriel Rufino",
   description: "Technical guides on software architecture, databases, and application development.",
   head: [
+    ['link', { rel: 'icon', href: '/public/favicon.svg' }],
     [
       'script',
       {},
