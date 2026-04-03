@@ -5,6 +5,10 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 export default withMermaid(defineConfig({
   title: "Guides by Gabriel Rufino",
   description: "Technical guides on software architecture, databases, and application development.",
+  cleanUrls: true,
+  sitemap: {
+    hostname: 'https://guides.gabrielrufino.com'
+  },
   head: [
     ['link', { rel: 'icon', href: '/public/favicon.svg' }],
     [
