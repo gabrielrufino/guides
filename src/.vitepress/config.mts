@@ -9,6 +9,7 @@ export default withMermaid(defineConfig({
   sitemap: {
     hostname: 'https://guides.gabrielrufino.com'
   },
+  lastUpdated: true,
   head: [
     ['link', { rel: 'icon', href: '/public/favicon.svg' }],
     [
@@ -39,6 +40,12 @@ export default withMermaid(defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.png',
+    lastUpdated: {
+      text: 'Last Updated',
+      formatOptions: {
+        dateStyle: 'full'
+      }
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guides', link: '/architecture' },
