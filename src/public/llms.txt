@@ -1,0 +1,24 @@
+# Guides by Gabriel Rufino
+Technical guides on software architecture, databases, and application development.
+
+## Site Contents
+- [Architecture](https://guides.gabrielrufino.com/architecture):
+  - [Distributed Locks](https://guides.gabrielrufino.com/architecture/distributed-locks): How to handle concurrency in distributed systems.
+  - [Idempotency Keys](https://guides.gabrielrufino.com/architecture/idempotency-keys): Ensuring operations are performed only once.
+  - [Multi-tenancy](https://guides.gabrielrufino.com/architecture/multi-tenancy): Strategies for serving multiple customers with a single deployment.
+  - [Orchestration vs. Choreography](https://guides.gabrielrufino.com/architecture/orchestration-vs-choreography): Microservices communication patterns.
+- [JavaScript](https://guides.gabrielrufino.com/javascript):
+  - [Mutation tests in JavaScript](https://guides.gabrielrufino.com/javascript/mutation-tests-in-javascript): Ensuring test suite quality by mutating the source code.
+- [MongoDB](https://guides.gabrielrufino.com/mongodb):
+  - [Data Duplication in MongoDB](https://guides.gabrielrufino.com/mongodb/data-duplication-in-mongodb): Pros and cons of denormalization.
+- [Observability](https://guides.gabrielrufino.com/observability):
+  - [Logs in JSON](https://guides.gabrielrufino.com/observability/logs-in-json): Structuring logs for better machine readability.
+- [SQL](https://guides.gabrielrufino.com/sql):
+  - [Horizontal vs. Vertical Partitioning](https://guides.gabrielrufino.com/sql/horizontal-vs-vertical-partitioning): Scaling relational databases.
+- [TypeScript](https://guides.gabrielrufino.com/typescript):
+  - [Mixins in TypeScript](https://guides.gabrielrufino.com/typescript/mixins-in-typescript): Functional composition in TS.
+
+## Metadata
+- Source: https://github.com/gabrielrufino/guides
+- Author: Gabriel Rufino (https://gabrielrufino.com)
+- Built with: VitePress
