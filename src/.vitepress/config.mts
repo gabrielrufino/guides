@@ -43,8 +43,7 @@ export default withMermaid(defineConfig({
     lastUpdated: {
       text: 'Last Updated',
       formatOptions: {
-        dateStyle: 'full',
-        timeStyle: 'medium'
+        dateStyle: 'full'
       }
     },
     nav: [
