@@ -1,13 +1,21 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import llmstxt, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid(defineConfig({
   title: "Guides by Gabriel Rufino",
   description: "Technical guides on software architecture, databases, and application development.",
-  cleanUrls: true,
   sitemap: {
     hostname: 'https://guides.gabrielrufino.com'
+  },
+  markdown: {
+    config(md) {
+      md.use(copyOrDownloadAsMarkdownButtons)
+    }
+  },
+  vite: {
+    plugins: [llmstxt()]
   },
   lastUpdated: true,
   head: [
@@ -63,17 +71,17 @@ export default withMermaid(defineConfig({
         ]
       },
       {
-        text: 'JavaScript',
-        link: '/javascript',
-        items: [
-          { text: 'Mutation tests in JavaScript', link: '/javascript/mutation-tests-in-javascript' }
-        ]
-      },
-      {
         text: 'MongoDB',
         link: '/mongodb',
         items: [
           { text: 'Data Duplication in MongoDB', link: '/mongodb/data-duplication-in-mongodb' }
+        ]
+      },
+      {
+        text: 'Node.js',
+        link: '/nodejs',
+        items: [
+          { text: 'Workers vs. Processes', link: '/nodejs/worker-vs-processes-in-nodejs' }
         ]
       },
       {
@@ -94,7 +102,8 @@ export default withMermaid(defineConfig({
         text: 'TypeScript',
         link: '/typescript',
         items: [
-          { text: 'Mixins in TypeScript', link: '/typescript/mixins-in-typescript' }
+          { text: 'Mixins in TypeScript', link: '/typescript/mixins-in-typescript' },
+          { text: 'Mutation tests in TypeScript', link: '/typescript/mutation-tests-in-typescript' }
         ]
       }
     ],

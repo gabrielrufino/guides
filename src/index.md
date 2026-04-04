@@ -34,10 +34,10 @@ features:
     title: Observability
     details: Logs in JSON, application monitoring, and writing resilient, observable applications.
     link: /observability
-  - icon: 🟨
-    title: JavaScript
-    details: Best practices for JavaScript, including mutation tests and modern patterns.
-    link: /javascript
+  - icon: 🔋
+    title: Node.js
+    details: Parallelism with Worker Threads, event loop optimization, and core internals.
+    link: /nodejs
   - icon: 🟦
     title: TypeScript
     details: Advanced TypeScript techniques like Mixins and resilient type systems.

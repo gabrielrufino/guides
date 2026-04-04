@@ -1,9 +1,12 @@
 import type { EnhanceAppContext } from 'vitepress'
 import DefaultTheme from "vitepress/theme";
+import CopyOrDownloadAsMarkdownButtons from 'vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue'
 
 export default {
   ...DefaultTheme,
-  enhanceApp: ({ router }: EnhanceAppContext) => {
+  enhanceApp: ({ app, router }: EnhanceAppContext) => {
+    app.component('CopyOrDownloadAsMarkdownButtons', CopyOrDownloadAsMarkdownButtons)
+
     if (typeof window !== 'undefined') {
       router.onAfterRouteChanged = (to) => {
         // @ts-ignore
