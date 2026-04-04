@@ -78,6 +78,13 @@ export default withMermaid(defineConfig({
         ]
       },
       {
+        text: 'Node.js',
+        link: '/nodejs',
+        items: [
+          { text: 'Workers vs. Processes', link: '/nodejs/worker-vs-processes-in-nodejs' }
+        ]
+      },
+      {
         text: 'Observability',
         link: '/observability',
         items: [
