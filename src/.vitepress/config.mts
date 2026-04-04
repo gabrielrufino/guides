@@ -71,13 +71,6 @@ export default withMermaid(defineConfig({
         ]
       },
       {
-        text: 'JavaScript',
-        link: '/javascript',
-        items: [
-          { text: 'Mutation tests in JavaScript', link: '/javascript/mutation-tests-in-javascript' }
-        ]
-      },
-      {
         text: 'MongoDB',
         link: '/mongodb',
         items: [
@@ -102,7 +95,8 @@ export default withMermaid(defineConfig({
         text: 'TypeScript',
         link: '/typescript',
         items: [
-          { text: 'Mixins in TypeScript', link: '/typescript/mixins-in-typescript' }
+          { text: 'Mixins in TypeScript', link: '/typescript/mixins-in-typescript' },
+          { text: 'Mutation tests in TypeScript', link: '/typescript/mutation-tests-in-typescript' }
         ]
       }
     ],

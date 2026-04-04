@@ -1,7 +1,10 @@
-# 🟨 JavaScript
+---
+head:
+  - - meta
+    - http-equiv: refresh
+      content: '0; url=/typescript/'
+---
 
-Best practices and advanced techniques for JavaScript development.
+# Redirecting...
 
-### Available Guides
-
-*   [**Mutation tests in JavaScript**](./mutation-tests-in-javascript) – How to ensure the quality of your tests through mutation testing.
+The JavaScript section has been moved to [TypeScript](/typescript/).
