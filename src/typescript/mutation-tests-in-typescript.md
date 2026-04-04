@@ -11,9 +11,9 @@ Let's suppose we're creating a lib that provides a function called `hasOnlyOddNu
 
 So, that is our function:
 
-```javascript
-// index.js
-module.exports = function hasOnlyOddNumbers(array) {
+```typescript
+// index.ts
+export default function hasOnlyOddNumbers(array: number[]): boolean {
   return array.every(number => number % 2 === 1)
 }
 ```
@@ -50,9 +50,9 @@ Turns out, in this case, **our unit tests wouldn't fail, which means that they'r
 
 We should add a new unit test to cover the case that the function receives even numbers. So let's do it:
 
-```javascript
-// index.spec.js
-const hasOnlyOddNumbers = require('.')
+```typescript
+// index.spec.ts
+import hasOnlyOddNumbers from '.'
 
 describe('hasOnlyOddNumbers', () => {
   it('Should return true when the argument has only odd numbers', () => {
@@ -141,8 +141,8 @@ After we include the new test, we get this output:
 Mutation testing  [==================================================] 100% (elapsed: <1m, remaining: n/a) 6/6 Mutants tested (0 survived, 0 timed out)
 
 All tests/index.spec.js
-  ✓ sum Should return true when the argument has only odd numbers [line 4] (killed 5)
-  ✓ sum Should return false when the argument has at least one even number [line 9] (killed 1)
+  ✓ hasOnlyOddNumbers Should return true when the argument has only odd numbers [line 4] (killed 5)
+  ✓ hasOnlyOddNumbers Should return false when the argument has at least one even number [line 9] (killed 1)
 
 Ran 2.00 tests per mutant on average.
 ----------|---------|----------|-----------|------------|----------|---------|
