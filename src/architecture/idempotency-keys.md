@@ -3,9 +3,7 @@
 An **Idempotency Key** is a unique identifier sent by a client to an API to ensure that an operation happens only once, even if the request is retried multiple times. This is critical in distributed systems to prevent duplicate actions, like charging a customer twice for a single order.
 
 
----
-
-### How It Works
+## How It Works
 
 
 1. **The client** generates a unique string (usually a UUID) for a specific operation.
@@ -15,9 +13,8 @@ An **Idempotency Key** is a unique identifier sent by a client to an API to ensu
    * **Duplicate Key:** Server skips processing and returns the **cached response** from the first successful request.
 
 
----
 
-### Example Request
+## Example Request
 
 ```http
 POST /v1/payments
@@ -53,10 +50,7 @@ sequenceDiagram
     Server-->>Client: 200 OK (Original Success Response)
 ```
 
-
----
-
-### Key Best Practices
+## Key Best Practices
 
 * **Expiration:** Store keys for a limited time (e.g., 24 hours) to avoid bloating your database.
 * **Scope:** Keys should be unique per user or account to avoid collisions.

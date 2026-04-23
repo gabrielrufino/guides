@@ -1,11 +1,6 @@
 # ♊ Data Duplication in MongoDB
 
-## Quick Introduction
-
 In MongoDB, data duplication is **normal and expected**. Unlike SQL databases, where you avoid repetition, MongoDB encourages you to store related data together in the same document. Why? Because joining collections is slow and expensive. This guide shows you what that means in practice and how to handle it.
-
-
----
 
 ## Why Data Duplication Happens
 
@@ -67,9 +62,6 @@ db.orders.findOne({ _id: ObjectId("123") })
 **One query. Instant result. Done.**
 
 This is why MongoDB encourages duplication—it's just simpler and faster.
-
-
----
 
 ## Real-World Example: E-commerce Orders
 
@@ -146,9 +138,6 @@ db.orders.insertOne({
 * Fast response times
 * Application code is simpler
 
-
----
-
 ## When to Embed vs. When to Reference
 
 ### Embed if:
@@ -191,9 +180,6 @@ db.comments.insertMany([
   // ... thousands more
 ])
 ```
-
-
----
 
 ## The Real Problem: Keeping Duplicated Data Consistent
 
@@ -309,9 +295,6 @@ updateUserEmail(ObjectId("user123"), "alice.j@example.com")
 * When you add a new collection with duplicated data, you update one place
 * Less error-prone than scattered update code
 
-
----
-
 ## Storage Cost: Does Duplication Matter?
 
 ### Do the Math
@@ -343,9 +326,6 @@ Storage doubled.
 **For large apps:** Maybe. Cloud databases charge per GB. Double storage = double cost. But you're also paying less for queries and servers because everything is faster.
 
 **In practice:** The speed gain almost always wins. Fewer queries, simpler code, and faster responses are worth the extra storage. Scale when it matters.
-
-
----
 
 ## Red Flags: When Duplication Goes Wrong
 
@@ -454,9 +434,6 @@ db.stores.updateOne(
 )
 ```
 
-
----
-
 ## Practical Decision Guide
 
 **When designing a new collection, ask yourself:**
@@ -478,9 +455,6 @@ db.stores.updateOne(
    * Few places? → Embed it; use transactions
    * Many places? → Reference it; too hard to keep consistent
 
-
----
-
 ## Checklist: Before You Deploy
 
 * ✓ Did you embed frequently-accessed data?
@@ -489,9 +463,6 @@ db.stores.updateOne(
 * ✓ Did you avoid unbounded arrays?
 * ✓ Is your document size under 5 MB (unless you have a good reason)?
 * ✓ Did you test query performance?
-
-
----
 
 ## Bottom Line
 

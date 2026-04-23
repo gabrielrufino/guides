@@ -2,9 +2,6 @@
 
 In microservices architecture, managing communication between services is crucial. There are two primary ways to handle these interactions: **Orchestration** and **Choreography**.
 
-
----
-
 ## Orchestration (The Conductor)
 
 In the Orchestration pattern, a **central controller** (the "Orchestrator") **acts as the brain**. It tells each service what to do and when to do it. **If a service fails, the orchestrator is responsible for handling the error or managing retries**.
@@ -33,9 +30,6 @@ sequenceDiagram
 * **Pros:** Centralized logic, easy to track the state of a process, simpler to implement complex workflows with many steps.
 * **Cons:** The orchestrator can become a bottleneck; services are tightly coupled to the controller's logic.
 
-
----
-
 ## Choreography (The Dance)
 
 In the Choreography pattern, there is **no central controller**. Instead, services communicate via **events**. Each service knows what to do when it hears a specific signal from another service.
@@ -58,9 +52,6 @@ graph LR
 
 * **Pros:** Highly decoupled, faster performance (asynchronous), easier to add new services without changing existing ones.
 * **Cons:** Harder to monitor the overall "big picture," debugging can be complex (requires distributed tracing), potential for "event spaghetti."
-
-
----
 
 ## Summary Comparison
 
