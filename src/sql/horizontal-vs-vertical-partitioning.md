@@ -1,13 +1,6 @@
 # Horizontal vs. Vertical Partitioning
 
-## Overview
-
-**Vertical Partitioning**:  Splits a table by **columns** (dividing attributes across multiple tables).
-
-**Horizontal Partitioning**: Splits a table by **rows** (dividing data across multiple tables or databases).
-
-
----
+**Horizontal Partitioning**: Splits a table by **rows** (dividing data across multiple tables or databases). **Vertical Partitioning**:  Splits a table by **columns** (dividing attributes across multiple tables).
 
 ## Vertical Partitioning
 
@@ -65,9 +58,6 @@ graph LR
 * Improved cache efficiency
 * Faster queries on frequently used columns
 * Reduced I/O for common operations
-
-
----
 
 ## Horizontal Partitioning
 
@@ -132,9 +122,6 @@ graph TD
 * Easier data archiving and deletion
 * Improved scalability (can distribute across servers - sharding)
 
-
----
-
 ## Comparison
 
 | Aspect | Vertical Partitioning | Horizontal Partitioning |
@@ -144,9 +131,6 @@ graph TD
 | **Query impact** | Fewer columns to scan | Fewer rows to scan      |
 | **Joins** | More joins needed     | Queries may hit multiple partitions |
 | **Scalability** | Limited               | High (enables sharding) |
-
-
----
 
 ## Combined Example
 
