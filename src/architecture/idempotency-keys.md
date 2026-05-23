@@ -6,7 +6,7 @@ An **Idempotency Key** is a unique identifier sent by a client to an API to ensu
 ## How It Works
 
 1. **The client** generates (or the server derives) a unique identifier for a specific operation.
-2. **The request** is sent with this key (usually in a header like `Idempotency-Key`).
+2. **The key** is either sent in the request (e.g., `Idempotency-Key` header) or derived by the server from the request properties.
 3. **The Server** checks a central store to see if it has seen this key before:
    * **New Key:** Server processes the request and stores the result alongside the key.
    * **Duplicate Key:** Server skips processing and returns the **cached response** from the first successful request.
@@ -35,7 +35,7 @@ In modern architectures with multiple server instances, the idempotency store **
   1. Server receives request.
   2. Server attempts to claim the key in Redis with a TTL.
   3. If the key already exists, return the stored result.
-  4. If not, proceed with the operation and update the key with the result.
+  4. If not, proceed with the operation and update the key with the final result (e.g., status "SUCCESS" and the response body).
 
 ## Example Request
 
@@ -61,10 +61,10 @@ sequenceDiagram
     participant Database
 
     Client->>Server: POST /payments (Key: ABC)
-    Server->>Redis: SET ABC "IN_PROGRESS" NX EX 3600
+    Server->>Redis: SET ABC "IN_PROGRESS" NX EX 60
     Redis-->>Server: OK (New)
     Server->>Database: Process payment
-    Server->>Redis: SET ABC "SUCCESS: {data}"
+    Server->>Redis: SET ABC "SUCCESS: {data}" EX 86400
     Server-->>Client: 200 OK
 
     Note over Client, Server: Network glitch! Client retries.
